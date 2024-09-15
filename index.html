@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Bot</title>
+    <script src="https://unpkg.com/vue@3.4/dist/vue.global.prod.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tock-vue-kit@0.3.6/dist/style.css"/>
+    <link rel="stylesheet" href="assets/web-chatbot.css"/>
+    <script crossorigin src="https://unpkg.com/tock-vue-kit@0.3.6/dist/tock-vue-kit.iife.js"></script>
+    <!-- <style>
+        :root {
+          --tvk_colors_brand-hue: 214;
+          --tvk_colors_brand-lightness: 42%;
+          --tvk_colors_brand-saturation: 40%;
+          --tvk_colors_dark_neutral: white;
+          --tvk_colors_dark_text1: white;
+          --tvk_colors_dark_text2: white;
+          --tvk_wrapper_height: calc(98vh - 6em);
+    }-->
+      </style>
+</head>
+
+<body>
+   <main>
+   <nav class="header">
+        <ul>
+            <li>T h e  <b>B O T </b>   S a m p l e</li>
+        </ul>
+        <div >
+            <img src="assets/logo.svg" alt="Chat" class="logo">
+        </div>
+    </nav>
+
+
+     <div class="default">
+        <div id="chat-wrapper"></div>
+     </div>
+
+  </main>
+</body>
+
+<script>
+    TockVueKit.renderChat(
+      document.getElementById("chat-wrapper"),
+      "https://demo-bot.tock.ai/io/sacquatella/howtonet/howtonetweb", {
+  "initialization": {
+    "welcomeMessage": "Bonjour, Je suis theBot,"
+  },
+  "preferences": {
+    "messages": {
+      "footNotes": {
+        "displayOnMessageSide": true
+      }
+    }
+  },
+  "wording": {
+    "messages": {
+      "message": {
+        "header": {
+          "labelUser": "Vous",
+          "labelBot": "TheBot"
+        }
+      }
+    },
+    "questionBar": {
+      "input": {
+        "placeholder": "Posez moi une question...  "
+      }
+    }
+  }
+}
+    );
+</script>
